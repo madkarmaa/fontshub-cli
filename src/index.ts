@@ -1,5 +1,9 @@
-const greet = (name: string) => {
-    console.log(`Hello, ${name.trim()}!`);
-};
+import chalk from 'chalk';
+import { fetchFonts } from './http';
 
-export default greet;
+const main = async () => {};
+
+main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+});

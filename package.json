@@ -10,12 +10,8 @@
     "peerDependencies": {
         "typescript": "^5.9.3"
     },
-    "exports": {
-        ".": {
-            "default": "./dist/index.js",
-            "types": "./dist/index.d.ts"
-        },
-        "./package.json": "./package.json"
+    "bin": {
+        "fontshub": "./dist/index.js"
     },
     "description": "TypeScript CLI-only client for FontsHub",
     "scripts": {
@@ -42,8 +38,8 @@
     },
     "license": "MIT",
     "dependencies": {
-        "@drizzle-team/brocli": "^0.11.0",
         "@inquirer/prompts": "^8.1.0",
+        "axios": "^1.13.2",
         "chalk": "^5.6.2",
         "zod": "^4.2.1"
     }
