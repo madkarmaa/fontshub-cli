@@ -1,21 +1,15 @@
 import { search } from '@inquirer/prompts';
 import chalk from 'chalk';
-import {
-    fontDownloadUrl,
-    getFontPageId,
-    getFonts,
-    matchFont,
-    parseArgs,
-} from './utils';
+import { downloadFont, getFonts, matchFont, parseArgs } from './utils';
 
 const main = async () => {
     const [query] = parseArgs(process.argv);
     const fonts = await getFonts();
-    let font = matchFont(fonts, query);
+    let font = query ? matchFont(fonts, query) : undefined;
 
     if (query && !font)
         console.log(
-            chalk.yellow(
+            chalk.dim.italic.yellow(
                 'No matching font found, starting interactive search...',
             ),
         );
@@ -35,8 +29,7 @@ const main = async () => {
                           .map((font) => ({ name: font.name, value: font })),
         });
 
-    const pageId = await getFontPageId(font);
-    console.log(fontDownloadUrl(pageId));
+    await downloadFont(font, `${font.name.replaceAll(' ', '_')}.zip`);
 };
 
 main().catch((error) => {
