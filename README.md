@@ -23,3 +23,6 @@ fontshub
 ```
 
 The same commands apply to all the other package managers.
+
+> [!NOTE]  
+> The fonts will be downloaded in the current directory.
