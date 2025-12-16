@@ -15,19 +15,30 @@ const main = async () => {
         );
 
     if (!font)
-        font = await search({
-            message: 'Select a font to download:',
-            source: async (input) =>
-                !input
-                    ? []
-                    : fonts
-                          .filter((font) =>
-                              font.name
-                                  .toLowerCase()
-                                  .includes(input.toLowerCase()),
-                          )
-                          .map((font) => ({ name: font.name, value: font })),
-        });
+        try {
+            font = await search({
+                message: 'Select a font to download:',
+                source: async (input) =>
+                    !input
+                        ? []
+                        : fonts
+                              .filter((font) =>
+                                  font.name
+                                      .toLowerCase()
+                                      .includes(input.toLowerCase()),
+                              )
+                              .map((font) => ({
+                                  name: font.name,
+                                  value: font,
+                              })),
+            });
+        } catch (error) {
+            if (!(error instanceof Error) || error.name !== 'ExitPromptError')
+                throw error;
+
+            console.error(chalk.red('Canceled font selection.'));
+            process.exit(1);
+        }
 
     await downloadFont(font, `${font.name.replaceAll(' ', '_')}.zip`);
 };
