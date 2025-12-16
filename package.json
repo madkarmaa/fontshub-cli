@@ -1,0 +1,44 @@
+{
+    "name": "{{package.name}}",
+    "version": "0.0.1",
+    "devDependencies": {
+        "@biomejs/biome": "2.2.6",
+        "@clack/prompts": "^0.11.0",
+        "@types/bun": "latest",
+        "simple-git-hooks": "^2.13.1"
+    },
+    "peerDependencies": {
+        "typescript": "^5.9.3"
+    },
+    "exports": {
+        ".": {
+            "default": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        },
+        "./package.json": "./package.json"
+    },
+    "description": "{{package.description}}",
+    "scripts": {
+        "biome": "biome check --write",
+        "ci": "biome ci",
+        "build": "tsc",
+        "dev": "tsc --watch",
+        "setup": "bun run ./scripts/setup.ts && bun i --force && bunx simple-git-hooks && bun run biome && git add . && git commit -m 'chore: project setup'",
+        "tags": "git push origin --tags && git push",
+        "patch": "bun pm version patch && bun run tags",
+        "minor": "bun pm version minor && bun run tags",
+        "major": "bun pm version major && bun run tags"
+    },
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "{{github.url}}.git"
+    },
+    "simple-git-hooks": {
+        "pre-commit": "bun run biome"
+    },
+    "license": "MIT"
+}
