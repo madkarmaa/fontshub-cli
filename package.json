@@ -1,5 +1,5 @@
 {
-    "name": "@madkarmaa/fontshub-cli",
+    "name": "@madkarma/fontshub-cli",
     "version": "0.0.1",
     "devDependencies": {
         "@biomejs/biome": "2.2.6",
