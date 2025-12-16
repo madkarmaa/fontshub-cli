@@ -1,7 +1,7 @@
 <h1 align="center">
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset="https://fontshub.pro/images/logo_white.svg">
-        <source media="(prefers-color-scheme: light)" srcset="https://fontshub.pro/images/logo_dark.svg">
+        <img src="https://fontshub.pro/images/logo_dark.svg">
     </picture>
     <p>@madkarma/fontshub-cli</p>
 </h1>
