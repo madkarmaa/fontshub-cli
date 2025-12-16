@@ -1,5 +1,5 @@
 {
-    "name": "{{package.name}}",
+    "name": "@madkarmaa/fontshub-cli",
     "version": "0.0.1",
     "devDependencies": {
         "@biomejs/biome": "2.2.6",
@@ -17,7 +17,7 @@
         },
         "./package.json": "./package.json"
     },
-    "description": "{{package.description}}",
+    "description": "TypeScript CLI-only client for FontsHub",
     "scripts": {
         "biome": "biome check --write",
         "ci": "biome ci",
@@ -35,7 +35,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "{{github.url}}.git"
+        "url": "https://github.com/madkarmaa/fontshub-cli.git"
     },
     "simple-git-hooks": {
         "pre-commit": "bun run biome"

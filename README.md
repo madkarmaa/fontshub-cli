@@ -1,7 +1,7 @@
 <h1 align="center">
     <img src="https://github.com/modrinth-ts.png" width="75" height="auto">
-    <p>{{package.name}}</p>
+    <p>@madkarmaa/fontshub-cli</p>
 </h1>
 <p align="center">
-    <i>{{package.description}}</i>
+    <i>TypeScript CLI-only client for FontsHub</i>
 </p>
