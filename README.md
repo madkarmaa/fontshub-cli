@@ -18,7 +18,7 @@ bunx @madkarma/fontshub-cli
 or
 
 ```sh
-bun i --g @madkarma/fontshub-cli
+bun i -g @madkarma/fontshub-cli
 fontshub
 ```
 
