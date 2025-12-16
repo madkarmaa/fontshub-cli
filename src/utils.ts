@@ -114,4 +114,5 @@ export const downloadFont = async (font: Font, destination: string) => {
     });
 
     await pipeline(stream, fileStream);
+    console.log(chalk.green(`Downloaded font to ${chalk.bold(destination)}`));
 };
