@@ -16,7 +16,7 @@ const main = async () => {
 
     if (!font)
         font = await search({
-            message: 'Select a font:',
+            message: 'Select a font to download:',
             source: async (input) =>
                 !input
                     ? []
