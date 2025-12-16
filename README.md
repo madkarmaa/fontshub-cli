@@ -22,4 +22,4 @@ bun i --g @madkarma/fontshub-cli
 fontshub
 ```
 
-The same installation command applies to all the other package managers.
+The same commands apply to all the other package managers.
